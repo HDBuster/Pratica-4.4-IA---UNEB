@@ -38,9 +38,10 @@ public class MapController : MonoBehaviour
                 if (from == node) break;
                 to = node;
                 var path = map.FindPath(from, to);
-                linePath = path != null ? path.Select(n => n.Position).ToArray() : null;
-                line.positionCount = linePath != null ? linePath.Length : 0;
-                if (linePath != null) line.SetPositions(linePath);
+                if (path == null) break;
+                linePath = path.Select(n => n.Position).ToArray();
+                line.positionCount = linePath.Length;
+                line.SetPositions(linePath);
                 break;
             case ({ }, { }):
                 from = node;
