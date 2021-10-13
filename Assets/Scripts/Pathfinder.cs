@@ -17,9 +17,12 @@ public class Pathfinder<T>
         if (path != null)
         {
             path.ForEach(t => pathAsString += $"{t} ");
+            return pathAsString;
         }
-
-        return pathAsString;
+        else
+        {
+            return "path not possible";
+        }
     }
 
     public List<T> FindPath(T from, T to)
