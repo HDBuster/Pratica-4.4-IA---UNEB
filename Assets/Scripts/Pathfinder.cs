@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 
 public class Pathfinder<T>
 {
@@ -44,7 +45,7 @@ public class Pathfinder<T>
             visited.Add(current);
 
             if (current.Equals(to))
-            {
+            {   
                 break;
             }
 
@@ -52,6 +53,7 @@ public class Pathfinder<T>
             {
                 if (!visited.Contains(neighbor))
                 {
+                    visited.Add(neighbor);
                     toVisit.Enqueue(neighbor);
                     parents[neighbor] = current;
                 }

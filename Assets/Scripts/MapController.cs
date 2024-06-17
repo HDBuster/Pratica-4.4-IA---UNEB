@@ -12,7 +12,7 @@ public class MapController : MonoBehaviour
 
     Pathfinder<Node> map;
     Node to, from;
-    Vector3[] linePath;
+    [SerializeField] Vector3[] linePath;
 
     void Start()
     {
